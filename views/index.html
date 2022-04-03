@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List Webpage</title>
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+    <div class="title-container">
+        <h3>To Do List Webpage</h3>
+    </div>
+
+    <hr>
+
+    <div class="user-input-container">
+        <form method="post" class="form-container">
+            <input type="text" name="newTask"/>
+            <input type="submit" value="insert" name="action"/>
+        </form>
+    </div>
+
+    <div class="tasks">
+        <% for (let i=0; i < tasks.length; i++) { %>
+            <div class="task-container">
+                <p class="task-description"><%= tasks[i] %> <button class="btn-primary" onclick="window.location.href='/delete/<%= i %>'">X</button></p>
+                <hr class="separator">
+            </div>
+
+        <% } %>
+
+    </div>
+</body>
+</html>
